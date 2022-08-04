@@ -24,12 +24,12 @@ class Login extends React.Component {
 
   buttonDisabled = () => {
     const { email, senha } = this.state;
-    const number = 6;
-    console.log(this.validation(email));
-    if (senha.length > number && this.validation(email)) {
+    const number = 5;
+    /*  if (senha.length > number && this.validation(email)) {
       return false;
     }
-    /* return senha.length > number && this.validation(email); */
+    return true; */
+    return !(senha.length > number && this.validation(email));
   }
 
   send = () => {
