@@ -2,9 +2,14 @@
 // Coloque aqui suas actions
 export const CURRENCIE_SUCESS = 'CURRENCIE_SUCESS';
 export const CURRENCIE_FAILURE = 'CURRENCIE_FAILURE';
+
 export const LOGIN = 'LOGIN';
+
 export const INFORMACAO_DO_FORM = 'INFORMACAO_DO_FORM';
+
 export const COTACAO = 'COTACAO';
+
+export const RETIRANDO_DEPESA = 'RETIRANDO_DEPESA';
 
 export const userLogin = (email) => ({
   type: LOGIN,
@@ -31,6 +36,11 @@ export const infoForm = (form, data) => ({
   moedasInfo,
 }); */
 
+export const retirandoAction = (expenses) => ({
+  type: RETIRANDO_DEPESA,
+  expenses,
+});
+
 export function getCurrencies() {
   return async (dispatch) => {
     const response = await fetch('https://economia.awesomeapi.com.br/json/all');
@@ -40,11 +50,12 @@ export function getCurrencies() {
     dispatch(cotação(data)); */
     const currencies = Object.keys(data).map((moeda) => moeda)
       .filter((moeda) => moeda !== 'USDT');
-    console.log(data);
+    // console.log(data);
     dispatch(currenciesSucess(currencies));
   };
 }
 
+/* ajuda do leo */
 export function funcaoQueTraz(form) {
   return async (dispatch) => {
     const response = await fetch('https://economia.awesomeapi.com.br/json/all');
