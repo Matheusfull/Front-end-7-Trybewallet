@@ -63,3 +63,10 @@ export function funcaoQueTraz(form) {
     dispatch(infoForm(form, data));
   };
 }
+
+/*
+Lembra da userLogin usada lá no componente Login que estava dentro do objeto retornado na map ? Então, agora fará sentindo ainda mais.
+Essa função, userLogin, aqui terá o papel de ser um comando bem específico para o reducer. A sua unicidade está na chave type. Além de ser um comando único para o reducer, ela pode ou não levar uma confirmação consigo.
+Então a action traz a type que a torna única e além disso pode trazer uma informação.
+Essa informação vai para o reducer e lá vamos ver o que faremos com ela.
+*/

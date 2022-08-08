@@ -17,3 +17,8 @@ const user = (state = INITIAL_STATE, action) => {
 };
 
 export default user;
+
+/*
+-No reducer, pegamos cada caso de um tipo de action, ou seja, lembra lá da action que tinha um type bem específico para ela, então ele é capturado aqui no reducer.
+-Depois dessa captura, o reducer fazer algo para aquela action específica. Ai varia, depende da lógica implementada. Às vezes a informação que a action manda para o reducer, é colocada aqui na lógica, seja para incrementar uma chave, modificar, atualizar. Ou seja, no reducer que vai ter as chaves do estados que queremos usar.
+*/
