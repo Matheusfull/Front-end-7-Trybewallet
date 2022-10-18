@@ -55,3 +55,10 @@ Requisito 2
 2 - Vamos criar mais um parágrafo para colocar a soma das despezas, que inicialmente é zero
 3 - E mais um parágrafo para colocar o câmbio usado, que será BRL
 */
+/*
+Requisito 4
+Aqui vamos fazer uma conversão da moeda escolhida para aplicar na soma des despesas.
+obs: quero saber o quanto em reais eu gastei
+1 - cur.value é o valor lá da moeda internacional que eu gastei
+2 - cur.exchangeRates[cur.currency].ask é a taxa de conversão, onde cur.exchangeRates eu pego o array de câmbio, é a moeda que eu quero usar de referência, cur.exchangeRates[cur.currency] é a moeda que eu vou usar de referência encontrada no array de câmbio e ask é o valor  dela.
+*/

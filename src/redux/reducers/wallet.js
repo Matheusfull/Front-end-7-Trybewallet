@@ -37,3 +37,13 @@ const wallet = (state = INITIAL_STATE, action) => {
 };
 
 export default wallet;
+
+/*
+Requisito 3
+- Quando o tipo for CURRENCIE_SUCESS, que é o mesmo 'sinal' do objeto que contém as moedas vindas na API, então preservaremos o estado e adicionaremos à chave que conterá o array com os moedas que vieram a api.
+*/
+
+/*
+Requisito 4
+Aqui, com o objeto expense vindo lá da action, vamos preservar o array expense e dicionar o novo objeto que veio na action. Com isso, ao clicar lá no funmulário, para enviar os dados, ele chega até aqui com a adição do câmbio e é salvo na store.
+*/

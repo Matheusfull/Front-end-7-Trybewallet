@@ -70,3 +70,17 @@ Essa função, userLogin, aqui terá o papel de ser um comando bem específico p
 Então a action traz a type que a torna única e além disso pode trazer uma informação.
 Essa informação vai para o reducer e lá vamos ver o que faremos com ela.
 */
+/*
+Requisito 3
+Teremos a parte da action assíncrona, ou seja, uma função que retorna outra função.
+- Nela vamos fazer o fetch normal, tratar e deletar o USDT
+- Depois trataremos o array excluindo a USDT, mais uma vez kkkk
+- Por fim, pegaremos o array e colocaremos na action para que seja guardada no estado global
+*/
+
+/*
+Requisito 4
+3 - Vamos fazer uma requisição para buscar a cotação do câmbio. Para isso usaremos um thunk
+  - Será uma função que vai fazer o fetch normal e depois colocar na action correspondente duas informações: a que vem do formulário com os dados e a cotação feita pela API. Por isso que lá no furmulário essa função 'funcaoQueTraz' só pega um parâmetro - que são os dados do formulário - e aqui, na action, ela faz um thunk em que a action vai receber dois parâmetros: o 1 vindo dessa mesmo função que pegou os dados do furmulário e o 2 parâmetro a cotação vindo da API.
+  - Essa action crator recebe dois dados como parâmetro para forma apenas um objeto: expense e enviar para o reducer.
+*/
