@@ -77,10 +77,13 @@ Teremos a parte da action assíncrona, ou seja, uma função que retorna outra f
 - Depois trataremos o array excluindo a USDT, mais uma vez kkkk
 - Por fim, pegaremos o array e colocaremos na action para que seja guardada no estado global
 */
-
 /*
 Requisito 4
 3 - Vamos fazer uma requisição para buscar a cotação do câmbio. Para isso usaremos um thunk
   - Será uma função que vai fazer o fetch normal e depois colocar na action correspondente duas informações: a que vem do formulário com os dados e a cotação feita pela API. Por isso que lá no furmulário essa função 'funcaoQueTraz' só pega um parâmetro - que são os dados do formulário - e aqui, na action, ela faz um thunk em que a action vai receber dois parâmetros: o 1 vindo dessa mesmo função que pegou os dados do furmulário e o 2 parâmetro a cotação vindo da API.
   - Essa action crator recebe dois dados como parâmetro para forma apenas um objeto: expense e enviar para o reducer.
+*/
+/*
+Requisito 8
+4 - Vamos associar um type para o novo array e enviá-lo, que será pego no reducer.
 */

@@ -47,3 +47,7 @@ Requisito 3
 Requisito 4
 Aqui, com o objeto expense vindo lá da action, vamos preservar o array expense e dicionar o novo objeto que veio na action. Com isso, ao clicar lá no funmulário, para enviar os dados, ele chega até aqui com a adição do câmbio e é salvo na store.
 */
+/*
+Requisito 8
+5 - Aqui o reducer vai pegar aquele type e atualizar a chave expenses com o array que veio lá do action. Com isso, esse array terá todas as despesas, exceto aquela que foi clicada lá na tabela. Feito isso, excluiremos aquela despesa.
+*/

@@ -5,7 +5,7 @@ import { retirandoAction } from '../redux/actions';
 
 class Table extends Component {
   retirandoDoEstado = (id) => {
-    console.log('fui clicado', id);
+    // console.log('fui clicado', id);
     const { expenses, retirandoDespesaEspecfica } = this.props;
     /* const newEspenses = expenses.splice(id, 0);
     retirandoDespesaEspecfica(newEspenses); */
@@ -16,6 +16,7 @@ class Table extends Component {
 
   render() {
     const { expenses } = this.props;
+    console.log(expenses);
     // const { description, tag, method, currency, value } = expenses;
     // const { exchangeRates.currency.name } = expenses;
     console.log(expenses);
@@ -75,6 +76,7 @@ class Table extends Component {
                 <td>
                   <button
                     type="button"
+                    data-testid="edit-btn"
                   >
                     Editar
                   </button>
@@ -100,7 +102,7 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  retirandoDespesaEspecfica: (id) => dispatch(retirandoAction(id)),
+  retirandoDespesaEspecfica: (novasDespesas) => dispatch(retirandoAction(novasDespesas)),
 });
 
 Table.propTypes = {
@@ -108,3 +110,22 @@ Table.propTypes = {
 }.isRequerid;
 
 export default connect(mapStateToProps, mapDispatchToProps)(Table);
+
+/*
+Requisito 6
+1 - Vamos criar a 'cabeça' da nossa tabela. Teremos uma criação normal com o thead, tr e th e os nomes de cada coluna.
+*/
+
+/*
+Requisito 7
+Para cada coluna que criamos, vamos alimentar com um dado que está salvo no estado global
+1 - Para pegar esses dados, vamos usa a função mapStateToProps que fora explicada em outro requisito. Mas de forma geral ela é uma função que retorna um objeto e ele contém os dados que vêm do estado global. Para trazer esses dados é preciso pegá-lo pela orientação a objeto (state.wallet.expenses, ou seja, vai ao estado, depois ao reducer e depois à chave expenses)
+2 - Vamos trazer tudo que está no estado em forma de objeto. Basta então desestruturá-lo para cada coluna que queremos alimentar.
+*/
+/*
+Requisito 8
+1 - Vamos pegar o id da despesa clicada
+2 - Com esse id vamos fazer um filtro em que teremos um novo array com todas as despesas, exceto por aquela que contém o id que foi clicado.
+3 - Joga esse array na mapDispatchToProps.
+obs: Vale ressaltar que esse dispatch recebe um parâmetro, que no caso será o novo array filtrado
+*/
