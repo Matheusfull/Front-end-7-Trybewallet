@@ -11,6 +11,10 @@ export const COTACAO = 'COTACAO';
 
 export const RETIRANDO_DEPESA = 'RETIRANDO_DEPESA';
 
+export const EDITANDO_DEPESA = 'EDITANDO_DEPESA';
+
+export const ID_DEPESA = 'ID_DEPESA';
+
 export const userLogin = (email) => ({
   type: LOGIN,
   email,
@@ -39,6 +43,16 @@ export const infoForm = (form, data) => ({
 export const retirandoAction = (expenses) => ({
   type: RETIRANDO_DEPESA,
   expenses,
+});
+
+export const renderAction = (edit) => ({
+  type: EDITANDO_DEPESA,
+  edit,
+});
+
+export const idAction = (id) => ({
+  type: ID_DEPESA,
+  id,
 });
 
 export function getCurrencies() {

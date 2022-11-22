@@ -45,36 +45,41 @@ class Login extends React.Component {
   render() {
     const { email, senha } = this.state;
     return (
-      <div>
-        <label htmlFor="email">
-          Email:
-          <input
-            type="email"
-            id="email"
-            data-testid="email-input"
-            value={ email }
-            name="email"
-            onChange={ this.handleChange }
-          />
-        </label>
-        <label htmlFor="password">
-          Senha:
-          <input
-            type="password"
-            id="password"
-            data-testid="password-input"
-            value={ senha }
-            name="senha"
-            onChange={ this.handleChange }
-          />
-        </label>
-        <button
-          disabled={ this.buttonDisabled() }
-          onClick={ this.send }
-          type="button"
-        >
-          Entrar
-        </button>
+      <div className="login">
+        <div className="form">
+          <label htmlFor="email">
+            Email:
+            <input
+              type="email"
+              id="email"
+              data-testid="email-input"
+              value={ email }
+              name="email"
+              onChange={ this.handleChange }
+            />
+          </label>
+          <label htmlFor="password">
+            Senha:
+            <input
+              type="password"
+              id="password"
+              data-testid="password-input"
+              value={ senha }
+              name="senha"
+              onChange={ this.handleChange }
+            />
+          </label>
+          <div className="box-buttons">
+            <button
+              className="btn btn-efeito"
+              disabled={ this.buttonDisabled() }
+              onClick={ this.send }
+              type="button"
+            >
+              Entrar
+            </button>
+          </div>
+        </div>
       </div>);
   }
 }

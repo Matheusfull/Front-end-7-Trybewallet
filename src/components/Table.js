@@ -4,6 +4,13 @@ import propTypes from 'prop-types';
 import { retirandoAction } from '../redux/actions';
 
 class Table extends Component {
+  constructor() {
+    super();
+    this.state = {
+      edit: false,
+    };
+  }
+
   retirandoDoEstado = (id) => {
     // console.log('fui clicado', id);
     const { expenses, retirandoDespesaEspecfica } = this.props;
@@ -14,16 +21,25 @@ class Table extends Component {
     retirandoDespesaEspecfica(novoArray);
   }
 
+  editandoDoEstado = (id) => {
+    this.setState((prevSate) => ({
+      edit: !prevSate.edit,
+    }));
+    const { edit } = this.state;
+    const { renderCondicional, idCondicional } = this.props;
+    renderCondicional(edit);
+    idCondicional(id);
+  }
+
   render() {
     const { expenses } = this.props;
     console.log(expenses);
     // const { description, tag, method, currency, value } = expenses;
     // const { exchangeRates.currency.name } = expenses;
-    console.log(expenses);
     return (
-      <table>
+      <table className="table">
         <thead>
-          <tr>
+          <tr className="thead">
             <th>Descrição</th>
             <th>Tag</th>
             <th>Método de pagamento</th>
@@ -38,38 +54,40 @@ class Table extends Component {
         <tbody>
           {
             expenses.map((expense) => (
-              <tr key={ expense.id }>
-                <td>
-                  {/* Descrição: */}
-                  { expense.description }
-                </td>
-                <td>
+              <tr key={ expense.id } className="tr">
+                <div className="description">
+                  <td>
+                    {/* Descrição: */}
+                    { expense.description }
+                  </td>
+                </div>
+                <td className="tag">
                   {/* Tag: */}
                   { expense.tag }
                 </td>
-                <td>
+                <td className="method">
                   {/* Método de pagamento: */}
                   { expense.method }
                 </td>
-                <td>
+                <td className="value">
                   {/* Valor: */}
                   { parseFloat(expense.value).toFixed(2) }
                 </td>
-                <td>
+                <td className="currency">
                   {/* Moeda: */}
                   { expense.exchangeRates[expense.currency].name }
                 </td>
-                <td>
+                <td className="cambio">
                   {/* Câmbio utilizado: */}
                   {/* { expense.currency } eu estava colocando o símbolo da moeda */}
                   { parseFloat(expense.exchangeRates[expense.currency].ask).toFixed(2) }
                 </td>
-                <td>
+                <td className="conversao">
                   {/* Valor convertido: */}
                   { ((expense.value)
                   * parseFloat(expense.exchangeRates[expense.currency].ask)).toFixed(2) }
                 </td>
-                <td>
+                <td className="moeda">
                   {/* Moeda de conversão: */}
                   Real
                 </td>
@@ -77,6 +95,7 @@ class Table extends Component {
                   <button
                     type="button"
                     data-testid="edit-btn"
+                    onClick={ () => this.editandoDoEstado(expense.id) }
                   >
                     Editar
                   </button>
@@ -103,6 +122,8 @@ const mapStateToProps = (state) => ({
 
 const mapDispatchToProps = (dispatch) => ({
   retirandoDespesaEspecfica: (novasDespesas) => dispatch(retirandoAction(novasDespesas)),
+  renderCondicional: (estado) => dispatch(renderAction(estado)),
+  idCondicional: (id) => dispatch(idAction(id)),
 });
 
 Table.propTypes = {

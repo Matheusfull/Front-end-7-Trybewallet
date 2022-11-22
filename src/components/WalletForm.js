@@ -58,9 +58,10 @@ render() {
   const { value, description, currency, method, tag } = this.state;
   // console.log(this.state);
   return (
-    <div>
+    <div className="walletForm">
       <form>
         <input
+          id="number"
           type="number"
           data-testid="value-input"
           placeholder="despesas:"
@@ -69,6 +70,7 @@ render() {
           value={ value }
         />
         <input
+          id="description"
           type="text"
           data-testid="description-input"
           placeholder="descrição:"
@@ -91,9 +93,10 @@ render() {
             }
           </select>
         </label>
-        <label htmlFor="formaDePagamento">
+        <label htmlFor="formaDePagamento" id="method">
           método de pagamento:
           <select
+            id="method_input"
             data-testid="method-input"
             name="method"
             value={ method }
@@ -105,7 +108,7 @@ render() {
           </select>
         </label>
 
-        <label htmlFor="categoria">
+        <label htmlFor="categoria" id="category">
           categoria:
           <select
             data-testid="tag-input"

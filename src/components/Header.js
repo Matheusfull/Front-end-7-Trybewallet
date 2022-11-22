@@ -13,17 +13,24 @@ class Header extends Component {
     const total = number.reduce((acc, curr) => acc + curr, 0); */
     // console.log(total);
     return (
-      <div>
-        <p data-testid="email-field">{ email }</p>
-        <p data-testid="total-field">
-          {expenses.reduce((acc, cur) => {
-            const conversao = Number(cur.value * cur.exchangeRates[cur.currency].ask);
-            acc += conversao;
-            // console.log(Number(acc).toFixed(2));
-            return Number(acc);
-          }, 0).toFixed(2)}
-        </p>
-        <p data-testid="header-currency-field">BRL</p>
+      <div className="header">
+        <div>
+          <p data-testid="email-field">{ email }</p>
+        </div>
+        <div>
+          <p data-testid="total-field">
+            Despeza total : R$
+            {expenses.reduce((acc, cur) => {
+              const conversao = Number(cur.value * cur.exchangeRates[cur.currency].ask);
+              acc += conversao;
+              // console.log(Number(acc).toFixed(2));
+              return Number(acc);
+            }, 0).toFixed(2)}
+          </p>
+        </div>
+        <div>
+          <p data-testid="header-currency-field">BRL</p>
+        </div>
       </div>
     );
   }
