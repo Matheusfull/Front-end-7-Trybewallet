@@ -43,7 +43,7 @@
 
   1. Clone o repositório
 
-  - Use o comando: `git clone git@github.com:tryber/sd-022-a-project-solar-system.git`.
+  - Use o comando: `git clone git@github.com:Matheusfull/Front-end-7-Trybewallet.git`.
   - Entre na pasta do repositório que você acabou de clonar:
     - `cd sd-022-a-project-solar-system`
 
