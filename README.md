@@ -9,7 +9,7 @@
 <details>
   <summary><strong>:memo: Habilidades</strong></summary><br />
 
-  Neste projeto, foi solidificado os seguintes conhecimentos:
+  Neste projeto, foram solidificados os seguintes conhecimentos:
 
   - Criar um _store_ Redux em aplicações React
 
